@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "445806361703",
+    "project_id": "mindflow-f4a56",
+    "storage_bucket": "mindflow-f4a56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445806361703:android:d8ce7239beb9d8d98fe8c2",
+        "android_client_info": {
+          "package_name": "com.khushalkhan.mindflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445806361703-2f6nhfu2slqtlb2lg2lupqhti5s9dhb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.khushalkhan.mindflow",
+            "certificate_hash": "4f980a2d4e7c9e0284477c417e7c2dfb428f8b96"
+          }
+        },
+        {
+          "client_id": "445806361703-bbv2gmrmttb230q88tv29f5ie4cfs8s5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.khushalkhan.mindflow",
+            "certificate_hash": "451425332ce32fab645d0649401d26efc9a94af4"
+          }
+        },
+        {
+          "client_id": "445806361703-i1oqq03gquhr186870decr4bhlv7bcli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.khushalkhan.mindflow",
+            "certificate_hash": "cec3743a0a2a997c20bb4646ae21084e1c56715b"
+          }
+        },
+        {
+          "client_id": "445806361703-dsn4sm8hpauthbsbh70hhpd31sdnum1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5f8-VW6KnZHmz6ia0_2uEVDPuLU8qpx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445806361703-dsn4sm8hpauthbsbh70hhpd31sdnum1e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "445806361703-b14lr8js2sl08j120q7lu6ql419titqj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mindflow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

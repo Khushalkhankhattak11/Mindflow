@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. Users collection: Restricted to the authenticated owner
+    match /users/{userId} {
+      allow read, delete: if isOwner(userId);
+      
+      // Allow create & update for owner with safe optional type validation
+      allow create, update: if isOwner(userId)
+        && (!('email' in request.resource.data) || request.resource.data.email is string)
+        && (!('name' in request.resource.data) || request.resource.data.name is string)
+        && (!('fcmToken' in request.resource.data) || request.resource.data.fcmToken is string);
+
+      // Subcollections under user (quick_exercise_reports, etc.)
+      match /{subcollection=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // 2. Unregistered Onboarding: Accessible client-side (no Auth), protected against list queries
+    match /unregistered_onboarding/{deviceId} {
+      allow get, write, delete: if true;
+      allow list: if false;
+    }
+
+    // 3. Registered Onboarding: Restricted to the authenticated owner
+    match /registered_onboarding/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // 4. UsersFeedback collection: Authenticated users can write feedback
+    match /UsersFeedback/{feedbackId} {
+      allow create, read: if isAuthenticated();
+    }
+
+    // Default deny rule
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

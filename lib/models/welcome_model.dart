@@ -1,0 +1,4 @@
+enum WelcomeAction {
+  getStarted,
+  login,
+}
